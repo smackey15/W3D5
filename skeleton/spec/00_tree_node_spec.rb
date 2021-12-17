@@ -68,6 +68,7 @@ describe PolyTreeNode do
 
       it "should remove the node from its old parent's children" do
         expect(node1.children).to_not include(node3)
+        # expect(node1.children).to_not include(node2)
       end
     end
   end
