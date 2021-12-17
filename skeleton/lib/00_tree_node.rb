@@ -6,8 +6,13 @@ class PolyTreeNode
         @children = []
     end
 
-    def parent
-
+    def parent=(node)
+        @parent = node
+        if parent == nil 
+            return nil
+        else
+            self.parent.children << self
+        end
     end
 
     def add_child
