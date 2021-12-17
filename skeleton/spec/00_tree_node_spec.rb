@@ -27,7 +27,15 @@ describe PolyTreeNode do
       node2.parent = node1
       node3.parent = node1
     end
+    # A = node1 @value= "A" @parent= nil @child = [B]
+    # B = node2 @value= "B" @parent= A @child = []
+    # B.parent = A
+    # C = node3
 
+    # A = node1 @value= "A" @parent= nil->B @child = [B->]
+    # B = node2 @value= "B" @parent= A->nil @child = [->A]
+    # A.parent = B
+    # C = node3
     it "should set a node's parent to the passed node" do
       expect(node2.parent).to equal(node1)
       expect(node3.parent).to equal(node1)
