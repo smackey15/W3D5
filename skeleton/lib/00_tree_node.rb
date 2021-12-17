@@ -23,8 +23,20 @@ class PolyTreeNode
     end
 
     def add_child(child)
-        #location       what to add
+        return if child.parent == self
+
         child.parent = self
         #should assign self to child's parent
     end
+
+    def remove_child(child)
+        if self.children.include?(child)
+            child.parent = nil
+        else
+            raise "error"
+        end
+    end
+
+    
+
 end
